@@ -1,6 +1,6 @@
 function App() {
   return (
-    <div className="App">
+    <div className="text-center m-14 font-semibold text-xl">
      <p>Prime GPT</p>
     </div>
   );
