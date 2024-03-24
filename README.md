@@ -2,6 +2,7 @@
 
 - Bundler : Webpack
 - CSS Framework : Tailwind
+- State Management : Redux-Toolkit
 
 ## Features 🚀
 
