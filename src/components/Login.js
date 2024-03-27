@@ -8,6 +8,7 @@ import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/redux/userSlice";
 import Header from "./Header";
+import { movieSuggestions1, movieSuggestions2 } from "../utils/constant/Constant";
 
 
 const Login = () => {
@@ -77,11 +78,11 @@ const Login = () => {
       <Header/>
       <div className="absolute">
         <img
-          src="https://m.media-amazon.com/images/G/31/AmazonVideo/2019/MLP.jpg"
+          src={movieSuggestions1}
           alt="suggestion-logo"
         />
         <img
-          src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/X-site/MLP/TVOD/TVOD_MLP_Right.jpg"
+          src={movieSuggestions2}
           alt="suggestion-logo"
         />
       </div>

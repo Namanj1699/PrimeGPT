@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from '../utils/redux/userSlice'
+import { user_icon } from "../utils/constant/Constant";
 
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
 
 
   useEffect(()=>{
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const {uid , email, displayName } = user;
         dispatch(addUser({ uid:uid, email:email, displayName:displayName }));
@@ -23,6 +24,7 @@ const Header = () => {
         navigate('/')
       }
     });
+    return()=> unsubscribe();
   },[])
 
   const handleSignOut = () => {
@@ -41,7 +43,7 @@ const Header = () => {
             {user ? user.displayName : "Guest"}
           </span>
           <img
-            src="https://m.media-amazon.com/images/G/02/CerberusPrimeVideo-FN38FSBD/adult-1.png"
+            src={user_icon}
             alt="user-icon"
             className="h-7 cursor-pointer"
             onClick={handleSignOut}
