@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from '../utils/redux/userSlice'
-import { user_icon } from "../utils/constant/Constant";
+import { userIcon } from "../utils/constant/Constant";
 
 
 const Header = () => {
@@ -36,14 +36,14 @@ const Header = () => {
 
   return auth.currentUser ? (
     <>
-      <div className="border p-2 mt-1 mx-20 bg-black text-white flex justify-between rounded-lg">
+      <div className="p-2 mt-1 mx-20 bg-black text-white flex justify-between rounded-lg">
         <p className="text-l font-bold">PrimeGPT</p>
         <div className="flex">
           <span className="mr-1 font-semibold">
             {user ? user.displayName : "Guest"}
           </span>
           <img
-            src={user_icon}
+            src={userIcon}
             alt="user-icon"
             className="h-7 cursor-pointer"
             onClick={handleSignOut}

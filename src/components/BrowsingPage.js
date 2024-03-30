@@ -7,7 +7,7 @@ const BrowsingPage = () => {
   usePlayingMovies();
 
   return (
-    <div>
+    <div className="bg-black">
       <Header />
       <MainContainer />
     </div>
