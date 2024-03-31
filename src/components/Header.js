@@ -36,16 +36,16 @@ const Header = () => {
 
   return auth.currentUser ? (
     <>
-      <div className="p-2 mt-1 mx-20 bg-black text-white flex justify-between rounded-lg">
-        <p className="text-l font-bold">PrimeGPT</p>
+      <div className="border border-black sticky top-2 p-2 mt-1 mx-48 bg-black text-white flex justify-between rounded-lg z-10">
+        <p className="text-xl font-bold">primeGPT</p>
         <div className="flex">
-          <span className="mr-1 font-semibold">
+          <span className="mr-1 font-semibold text-gray-500">
             {user ? user.displayName : "Guest"}
           </span>
           <img
             src={userIcon}
             alt="user-icon"
-            className="h-7 cursor-pointer"
+            className="h-7 cursor-pointer pl-1"
             onClick={handleSignOut}
           />
         </div>
@@ -55,7 +55,7 @@ const Header = () => {
     <div className="absolute z-10">
       {" "}
       <h1 className="text-white text-2xl font-semibold m-4">
-        PrimeGPT
+        primeGPT
       </h1>
     </div>
   );
