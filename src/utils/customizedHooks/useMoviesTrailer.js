@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
-import { addTrailerVideo } from '../redux/movieSlice';
+import { addTrailer } from '../redux/movieSlice';
 import { tmdbGetOptions } from '../constant/Constant';
 
 const useMoviesTrailer = (movieId) => {
@@ -19,7 +19,7 @@ const useMoviesTrailer = (movieId) => {
   
       const filterData = json.results.filter((video) => video.type === "Trailer");
       const trailer = filterData.length ? filterData[0] : json[0];
-      dispatch(addTrailerVideo(trailer));
+      dispatch(addTrailer(trailer));
     };
 }
 

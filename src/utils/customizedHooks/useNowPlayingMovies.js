@@ -1,10 +1,10 @@
 import { tmdbGetOptions } from "../constant/Constant";
 import { useDispatch } from "react-redux";
-import { addPlayingMovies } from "../redux/movieSlice";
+import { addNowPlayingMovies } from "../redux/movieSlice";
 import { useEffect } from "react";
 
 
-const usePlayingMovies = () => {
+const useNowPlayingMovies = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,8 +17,8 @@ const usePlayingMovies = () => {
       tmdbGetOptions
     );
     const res = await data.json();
-    dispatch(addPlayingMovies(res.results));
+    dispatch(addNowPlayingMovies(res.results));
   };
 };
 
-export default usePlayingMovies;
+export default useNowPlayingMovies;
