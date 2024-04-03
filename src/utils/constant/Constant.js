@@ -7,5 +7,6 @@ export const movieSuggestions1 =
 export const movieSuggestions2 =
   "https://m.media-amazon.com/images/G/31/AmazonVideo/2021/X-site/MLP/TVOD/TVOD_MLP_Right.jpg";
 
-export const image_cdn_url = "https://image.tmdb.org/t/p/w500/"
+export const image_cdn_url = "https://image.tmdb.org/t/p/w500/";
+
 
