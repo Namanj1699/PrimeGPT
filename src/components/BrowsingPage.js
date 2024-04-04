@@ -6,6 +6,9 @@ import SecondaryContainer from "./SecondaryContainer";
 import usePopularMovies from "../utils/customizedHooks/usePopularMovies";
 import useTopRatedMovies from "../utils/customizedHooks/useTopRatedMovies"
 import useUpcomingMovies from "../utils/customizedHooks/useUpcomingMovies"
+import { useSelector } from "react-redux";
+import GPTSearch from "./GPTSearch";
+
 
 const BrowsingPage = () => {
   useNowPlayingMovies();
@@ -13,11 +16,18 @@ const BrowsingPage = () => {
   useTopRatedMovies();
   useUpcomingMovies();
 
+  const data = useSelector((store)=>store.gpt)
+  
   return (
     <div className="bg-black">
       <Header />
+      {data.gptFlag ? <> 
       <MainContainer />
-      <SecondaryContainer/>
+      <SecondaryContainer/>      
+      </> :<>
+      <GPTSearch/>
+      </>}
+      
     </div>
   );
 };

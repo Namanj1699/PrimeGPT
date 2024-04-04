@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const gptSlice = createSlice({
     name : 'gpt',
     initialState : {
-        gptFlag : false 
+        gptFlag : true 
     },
     reducers : {
         modifyGptFlag : (state,action) =>{
-            state.gptFlag = !action.payload
+            state.gptFlag = !state.gptFlag
         }
     }
 })

@@ -9,4 +9,3 @@ export const movieSuggestions2 =
 
 export const image_cdn_url = "https://image.tmdb.org/t/p/w500/";
 
-
