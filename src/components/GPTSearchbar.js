@@ -1,17 +1,24 @@
 import React from "react";
-import { Form } from "react-router-dom";
 
 const GPTSearchbar = () => {
   return (
     <div>
-      <Form>
+      <div>
       <input
-        type="search"
+        className="border-[1px] border-black p-4 w-9/12 ml-[175px] my-12 rounded-lg cursor-text bg-slate-700 text-white font-semibold"
+        type="text"
+        // value={searchText}
         placeholder="Search"
-        className="px-[450px] py-6 mt-12 mx-[180px] rounded-lg bg-gray-700"
+        // onChange={(e) => {
+        //   setSearchText(e.target.value);
+        //   const Flist = listofRestaurants.filter((rest) => {
+        //     return rest.info.name
+        //       .toLowerCase().includes(searchText.toLowerCase());
+        //   });
+        //   setFilteredRestaurants(Flist);
+        // }}
       />
-        </Form>  
-      
+      </div>
     </div>
   );
 };
