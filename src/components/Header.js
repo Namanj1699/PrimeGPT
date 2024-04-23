@@ -7,13 +7,15 @@ import { addUser, removeUser } from '../utils/redux/userSlice'
 import { userIcon } from "../utils/constant/Constant";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { modifyGptFlag } from "../utils/redux/gptSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
-  
+  const data = useSelector((store)=>store.gpt)
+
 
   useEffect(()=>{
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -46,7 +48,9 @@ const Header = () => {
         <p className="text-xl font-bold">primeGPT</p>
         <div className="flex">
           <div className="mx-8">
-          <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" className="cursor-pointer" onClick={handleSearchClick} />
+            {data.gptFlag ? <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" className="cursor-pointer" onClick={handleSearchClick} />
+:  <FontAwesomeIcon icon={faHouse} size="lg" className="cursor-pointer" onClick={handleSearchClick} />
+}
           </div>
           <span className="mr-1 font-semibold text-gray-500">
             {user ? user.displayName : "Guest"}

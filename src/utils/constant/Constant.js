@@ -9,3 +9,15 @@ export const movieSuggestions2 =
 
 export const image_cdn_url = "https://image.tmdb.org/t/p/w500/";
 
+export const tmdbGetOptions = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer'+ process.env.REACT_APP_TMDB_API_KEY,
+  }
+};
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_API_KEY
+
+export const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY
+
