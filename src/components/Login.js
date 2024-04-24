@@ -78,16 +78,14 @@ const Login = () => {
       <Header/>
       <div className="absolute">
         <img
+        className="h-screen object-cover"
           src={movieSuggestions1}
           alt="suggestion-logo"
         />
-        <img
-          src={movieSuggestions2}
-          alt="suggestion-logo"
-        />
+        
       </div>
       <form
-        className="p-12 absolute w-3/12 m-40 mx-auto right-0 left-0 text-white bg-black bg-opacity-60"
+        className="p-12 absolute w-full md:w-3/12 m-40 mx-auto right-0 left-0 text-white bg-black bg-opacity-60"
         onSubmit={(e) => e.preventDefault()}
       >
         <h1 className="font-semibold text-2xl p-4 mx-2">

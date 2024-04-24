@@ -12,6 +12,10 @@ const gptSlice = createSlice({
             state.gptFlag = !state.gptFlag
         },
 
+        setDefaultFlag : (state,action) =>{
+            state.gptFlag = true;
+        },
+
         addGptSearchMovieList : (state , action)=>{
             const {gptMovieNames, gptMovieResults} = action.payload;
             state.gptMovieNames = gptMovieNames;
@@ -20,5 +24,5 @@ const gptSlice = createSlice({
     }
 })
 
-export const {modifyGptFlag, addGptSearchMovieList} = gptSlice.actions;
+export const {modifyGptFlag, addGptSearchMovieList, setDefaultFlag} = gptSlice.actions;
 export default gptSlice.reducer;

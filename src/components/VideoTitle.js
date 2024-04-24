@@ -1,21 +1,35 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
-const VideoTitle = ({title,overview}) => {
+const VideoTitle = ({ title, overview }) => {
+  const [displayFlag, setDisplayFlag] = useState(false);
+
+  const handleDisplayFlag = () => {
+    setDisplayFlag(!displayFlag);
+  };
 
   return (
-    <div className='w-screen aspect-video absolute text-white bg-gradient-to-r from-black px-24 pt-[15%]'>
-      <h1 className='text-4xl font-bold'>{title}</h1>
-      <p className='py-8 text-lg w-1/4'>{overview}</p>
-      <div className=''>
-        <button className='bg-white text-black p-4 px-12 text-xl rounded-lg hover:bg-opacity-50'>▶️ Play</button>
-        <button className='mx-2 bg-gray-500 text-white p-4 px-12 text-xl rounded-lg bg-opacity-50'>
-        <FontAwesomeIcon icon={faCircleInfo} size='lg' className='px-2' />
-          More Info</button>
-      </div>
-    </div>
-  )
-}
+    <div className="w-screen aspect-video absolute text-white bg-gradient-to-r from-black px-24 pt-[10%]">
+      <h1 className="text-2xl md:text-4xl font-semibold md:font-bold ml-[-80px] md:ml-0 py-1 md:py-8">
+        {title}
+      </h1>
 
-export default VideoTitle
+      {displayFlag ? (
+        <p className="py-4 text-xs w-1/4 md:text-lg">
+          {displayFlag && overview}
+        </p>
+      ) : (
+        <button
+          className="hidden md:inline-block mx-2 bg-gray-500 text-white p-2 md:p-4 px-3 md:px-12 text-xl rounded-lg bg-opacity-50 ml-[-80px] md:ml-[-10px]"
+          onClick={handleDisplayFlag}
+        >
+          <FontAwesomeIcon icon={faCircleInfo} size="lg" className="px-2" />
+          More Info
+        </button>
+      )}
+    </div>
+  );
+};
+
+export default VideoTitle;
