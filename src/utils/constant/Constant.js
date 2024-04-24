@@ -13,7 +13,7 @@ export const tmdbGetOptions = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer'+ process.env.REACT_APP_TMDB_API_KEY,
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZWMzZTAxYmMwNmY3NTJiZWUxNWVhYzg3ZDA2YWQ5NCIsInN1YiI6IjY2MDQ1NjhjMTk3ZGU0MDE4NjFlMzY0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xeCdSe-0Tc7l7E3VdpOIn8X4518OPHtAfn6uThkL9fA',
   }
 };
 
