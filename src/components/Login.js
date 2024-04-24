@@ -8,11 +8,10 @@ import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/redux/userSlice";
 import Header from "./Header";
-import { movieSuggestions1, movieSuggestions2 } from "../utils/constant/Constant";
+import { movieSuggestions1} from "../utils/constant/Constant";
 
 
 const Login = () => {
-  console.log("testing",process.env.REACT_APP_TMDB_API_KEY)
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const dispatch = useDispatch();
