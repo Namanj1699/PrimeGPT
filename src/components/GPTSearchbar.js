@@ -51,7 +51,7 @@ const GPTSearchbar = () => {
 
   return (
     <div>
-      <div className="absolute mt-20 mx-[1200px] cursor-pointer">
+      <div className="absolute mt-20 mx-[320px] md:mx-[1200px] cursor-pointer">
         <FontAwesomeIcon
           icon={faMagnifyingGlass}
           size="xl"
