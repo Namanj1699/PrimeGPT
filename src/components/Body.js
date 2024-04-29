@@ -2,6 +2,7 @@ import React from 'react'
 import {createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Login from "../components/Login"
 import BrowsingPage from "../components/BrowsingPage"
+import MovieOverview from './MovieOverview'
 
 export default function Body() {
 
@@ -13,6 +14,10 @@ export default function Body() {
     {
       path:"/browse",
       element: <BrowsingPage/>
+    },
+    {
+      path:"/overview/:movieId",
+      element: <MovieOverview/>
     }
   ]);
 
