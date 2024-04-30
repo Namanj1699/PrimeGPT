@@ -8,7 +8,7 @@ const useTopRatedMovies = () => {
   const data = useSelector((store)=>store.movies);
 
   useEffect(() => {
-    !data.topRatedMovies &&
+    // !data.topRatedMovies &&
     getTopRatedMovies();
   }, []);
 

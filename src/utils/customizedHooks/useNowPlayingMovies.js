@@ -9,7 +9,7 @@ const useNowPlayingMovies = () => {
   const data = useSelector((store)=>store.movies);
 
   useEffect(() => {
-    !data.nowPlayingMovies &&
+    // !data.nowPlayingMovies &&
     getNowPlayingMovies();
   }, []);
 
