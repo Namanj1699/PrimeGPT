@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { tmdbGetOptions } from "../constant/Constant";
 import { addPopularMovies } from "../redux/movieSlice";
 
 const usePopularMovies = () => {
   const dispatch = useDispatch();
+  const data = useSelector((store)=>store.movies);
+
   useEffect(() => {
+    !data.popularMovies &&
     getPopularMovies();
   }, []);
 

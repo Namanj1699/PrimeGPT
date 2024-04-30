@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTopRatedMovies } from "../redux/movieSlice";
 import { tmdbGetOptions } from "../constant/Constant";
 
 const useTopRatedMovies = () => {
   const dispatch = useDispatch();
+  const data = useSelector((store)=>store.movies);
+
   useEffect(() => {
+    !data.topRatedMovies &&
     getTopRatedMovies();
   }, []);
 

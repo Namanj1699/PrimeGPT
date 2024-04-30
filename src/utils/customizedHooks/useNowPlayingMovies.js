@@ -1,13 +1,15 @@
 import { tmdbGetOptions } from "../constant/Constant";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addNowPlayingMovies } from "../redux/movieSlice";
 import { useEffect } from "react";
 
 
 const useNowPlayingMovies = () => {
   const dispatch = useDispatch();
+  const data = useSelector((store)=>store.movies);
 
   useEffect(() => {
+    !data.nowPlayingMovies &&
     getNowPlayingMovies();
   }, []);
 

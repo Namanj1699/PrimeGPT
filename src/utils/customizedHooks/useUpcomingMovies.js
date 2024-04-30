@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUpcomingMovies } from "../redux/movieSlice";
 import { tmdbGetOptions } from "../constant/Constant";
 
 const useUpcomingMovies = () => {
   const dispatch = useDispatch();
+  const data = useSelector((store)=>store.movies);
+
 
   useEffect(() => {
+    !data.upcomingMovies &&
     getUpcomingMovies();
   }, []);
 
