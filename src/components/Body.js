@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 import appStore from "../utils/redux/appStore";
 import { Provider } from "react-redux";
 import Header from "./Header";
-import Search from "./GPTSearchbar"
+import Search from "./GPTSearch"
 
 export default function Body() {
   const AppLayout = () => {
