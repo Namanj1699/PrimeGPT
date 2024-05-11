@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import useMovieCredit from "../utils/customizedHooks/useMovieCredit";
 import CrewCards from "./CrewCards";
 import { tmdbGetOptions } from "../utils/constant/Constant";
+import navailable from '../images/navailable.jpeg'
 
 const MovieOverview = () => {
   
@@ -33,7 +34,19 @@ const MovieOverview = () => {
   useMovieCredit(movieId);
   const movieCast = useSelector((store)=>store.movies.cast);
   
-  return (
+  return trailer===undefined ?(<div>
+    <img className="w-6/12 mx-auto my-12" src={navailable}/>
+    <h1 className="text-white mx-12 my-10 text-4xl">{title}</h1>
+      <p className="text-white mx-12">{overview}</p>
+      <h1 className="text-white mx-12 my-10 text-2xl">Cast & Crew</h1>
+      <div className=" flex overflow-x-scroll my-6 mx-10">
+        <div className="flex">
+          {movieCast?.map((cast) => (
+            <CrewCards key={cast.id} profile_path={cast.profile_path} name={cast.name} />
+          ))}
+        </div>
+      </div>
+  </div>): (
     <div>
       <iframe
         className="w-screen aspect-video"

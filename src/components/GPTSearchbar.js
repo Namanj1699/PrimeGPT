@@ -30,9 +30,9 @@ const GPTSearchbar = () => {
 
   const gptResults = async () => {
     const gptQuery =
-      "Act as a movie recommendation system and suggest movies for the query " +
+      "Act as a movie recommendation system and suggest accurate movies for the query" +
       gptSearch.current.value +
-      ". only give me name of 5 movies, comma separated like the example result given ahead. Example Result: Gadar2, animal, sholay, phir hera pheri, dhamaal";
+      "give me name of query related movies, comma separated like the example result given ahead. Example Result: Gadar2, animal, sholay, phir hera pheri, dhamaal";
 
     const result = await model.generateContent(gptQuery);
     const response = await result.response;
@@ -51,7 +51,7 @@ const GPTSearchbar = () => {
 
   return (
     <div>
-      <div className="absolute mt-20 mx-[320px] md:mx-[1200px] cursor-pointer">
+      <div className="absolute mt-20 mx-[290px] md:mx-[1100px] cursor-pointer">
         <FontAwesomeIcon
           icon={faMagnifyingGlass}
           size="xl"

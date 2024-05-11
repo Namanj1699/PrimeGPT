@@ -46,7 +46,7 @@ const Header = () => {
           primeGPT
         </p></Link>
         <div className="flex">
-              <div>
+              <div className="mx-10 md:mx-0">
               <Link to="/browse">
               <FontAwesomeIcon
                 icon={faHouse}
