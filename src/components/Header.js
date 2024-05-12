@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { modifyGptFlag } from "../utils/redux/gptSlice";
+import ToolTip from "../utils/tooltip.tsx";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -53,6 +54,7 @@ const Header = () => {
                 size="lg"
                 className="cursor-pointer"
                 onClick={handleSearchClick}
+                title="Home Page"
               />
               </Link>
               </div>
@@ -63,6 +65,7 @@ const Header = () => {
                 size="lg"
                 className="cursor-pointer"
                 onClick={handleSearchClick}
+                title="AI Search"
               />
               </Link>
               </div>
@@ -70,12 +73,14 @@ const Header = () => {
           <span className="mr-1 font-semibold text-gray-500">
             {user ? user.displayName : "Guest"}
           </span>
+          <ToolTip tooltip="Sign Out">
           <img
             src={userIcon}
             alt="user-icon"
             className="h-7 cursor-pointer pl-1"
             onClick={handleSignOut}
           />
+          </ToolTip>
         </div>
       </div>
     </>
