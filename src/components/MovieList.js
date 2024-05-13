@@ -6,7 +6,7 @@ const MovieList = ({ title, movies }) => {
     <div className="p-4">
       <h1 className="text-3xl text-white font-semibold py-4">{title}</h1>
 
-      <div className=" flex overflow-x-scroll">
+      <div className=" flex overflow-x-scroll scrollbar-hide">
         <div className="flex">
           {movies?.map((movie) => (
             <Link key={movie.id} to={"/overview/"+movie.id}>
