@@ -7,7 +7,10 @@ import { Outlet } from "react-router-dom";
 import appStore from "../utils/redux/appStore";
 import { Provider } from "react-redux";
 import Header from "./Header";
-import Search from "./GPTSearch"
+import Search from "./GPTSearch";
+import Contact from "./Contact";
+import SideNavigation from "./SideNavigation";
+import About from "./About";
 
 export default function Body() {
   const AppLayout = () => {
@@ -16,6 +19,17 @@ export default function Body() {
         <div className="app">
           <Header />
           <Outlet />
+        </div>
+      </Provider>
+    );
+  };
+
+  const NewLayout = () => {
+    return (
+      <Provider store={appStore}>
+        <div>
+          <SideNavigation/>
+          <Outlet/>
         </div>
       </Provider>
     );
@@ -42,8 +56,28 @@ export default function Body() {
           path: "/search",
           element: <Search />,
         },
+        {
+          path: "/support",
+          element: <NewLayout />,
+          children :[
+            {
+              path : "/support",
+              element : <Contact/>,
+            },
+          ]
+        },
+        {
+          path : "/about",
+          element :<NewLayout/>,
+          children :[
+            {
+              path : "/about",
+              element : <About/>
+            }
+          ]
+        },
       ],
-    },
+    }
   ]);
 
   return <RouterProvider router={appRouter} />;

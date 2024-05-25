@@ -10,6 +10,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { modifyGptFlag } from "../utils/redux/gptSlice";
 import ToolTip from "../utils/tooltip.tsx";
+import { faIdCardClip } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -43,43 +44,53 @@ const Header = () => {
   return auth.currentUser ? (
     <>
       <div className="md:border md:border-black sticky top-2 p-2 mt-1 mx-48 bg-none md:bg-black opacity-85 text-white flex justify-center md:justify-between rounded-lg z-10">
-        <Link to="/browse"><p className="text-xl font-bold cursor-pointer">
-          primeGPT
-        </p></Link>
+        <Link to="/browse">
+          <p className="text-xl font-bold cursor-pointer">primeGPT</p>
+        </Link>
         <div className="flex">
-              <div className="mx-10 md:mx-0">
-              <Link to="/browse">
+          <div className="mx-10 md:mx-0">
+            <Link to="/browse">
               <FontAwesomeIcon
                 icon={faHouse}
                 size="lg"
                 className="cursor-pointer"
                 onClick={handleSearchClick}
-                title="Home Page"
               />
-              </Link>
-              </div>
-              <div className="mx-8">
-              <Link to="/search">
+            </Link>
+          </div>
+          <div className="mx-10">
+          <ToolTip tooltip="AI Search">
+            <Link to="/search">
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
                 size="lg"
                 className="cursor-pointer"
                 onClick={handleSearchClick}
-                title="AI Search"
               />
-              </Link>
-              </div>
-          
+            </Link>
+            </ToolTip>
+          </div>
+          <div className="mr-10">
+          <ToolTip tooltip="Help & Support">
+            <Link to="/support">
+              <FontAwesomeIcon
+                icon={faIdCardClip}
+                size="lg"
+                className="cursor-pointer"
+              />
+            </Link>
+            </ToolTip>
+          </div>
           <span className="mr-1 font-semibold text-gray-500">
             {user ? user.displayName : "Guest"}
           </span>
           <ToolTip tooltip="Sign Out">
-          <img
-            src={userIcon}
-            alt="user-icon"
-            className="h-7 cursor-pointer pl-1"
-            onClick={handleSignOut}
-          />
+            <img
+              src={userIcon}
+              alt="user-icon"
+              className="h-7 cursor-pointer pl-1"
+              onClick={handleSignOut}
+            />
           </ToolTip>
         </div>
       </div>
