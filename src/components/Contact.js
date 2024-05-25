@@ -14,10 +14,10 @@ const Contact = () => {
           })
           .then(
             () => {
-              console.log('SUCCESS!');
+              alert("Message Sent Successfully")
             },
             (error) => {
-              console.log('FAILED...', error.text);
+              alert(error.text)
             },
           );
       };
