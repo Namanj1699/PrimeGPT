@@ -58,7 +58,7 @@ const Header = () => {
               />
             </Link>
           </div>
-          <div className="mx-10">
+          <div className="mx-6 md:mx-10">
           <ToolTip tooltip="AI Search">
             <Link to="/search">
               <FontAwesomeIcon
@@ -70,7 +70,7 @@ const Header = () => {
             </Link>
             </ToolTip>
           </div>
-          <div className="mr-10">
+          <div className="mr-10 md:ml-0 ml-4">
           <ToolTip tooltip="Help & Support">
             <Link to="/support">
               <FontAwesomeIcon

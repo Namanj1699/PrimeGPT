@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const SideNavigation = () => {
   return (
-    <div className="mt-40 ml-4">
+    <div className="md:mt-40 md:ml-4">
       <Sidebar className="">
   <Menu>
     <Link to="/support"><MenuItem > Queries & Feedback </MenuItem></Link>

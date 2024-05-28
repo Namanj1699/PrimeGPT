@@ -1,8 +1,13 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
   const form = useRef();
+  const notifySuccess = () => toast("Message sent successfully 🚀");
+  const notifyFailure = () => toast("Message not sent 🚫");
+
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -13,49 +18,60 @@ const Contact = () => {
       })
       .then(
         () => {
-          alert("Message Sent Successfully");
+          notifySuccess();
         },
         (error) => {
-          alert(error.text);
+          notifyFailure();
         }
       );
   };
 
   return (
-    <div className="text-white ml-80 mt-[-175px]">
-      <p className="text-red-600 m-4">
-        {" "}
-        Note : This functionality 'support' is currently under development, If you face any issue
-        then please wait for some time. It will be fix soon. Thanku :)
-      </p>
+    <div className="text-white md:ml-[600px] md:mt-[-175px] h-screen object-cover">
       <form ref={form} onSubmit={sendEmail}>
-        <label className="m-72">
+        <label className="md:m-72 md:ml-0 ml-8">
           Name
           <input
-            className="mb-8 ml-10 text-black"
+            className="md:mb-8 mb-6 md:ml-10 ml-10 text-black"
             type="text"
             name="from_name"
+            required
           />
         </label>
         <br />
-        <label className="m-72">
+        <label className="md:m-72 md:ml-0 ml-8">
           Email
           <input
-            className="mb-8 ml-11 text-black"
+            className="md:mb-8 mb-6 md:ml-11 ml-11 text-black"
             type="email"
             name="user_email"
+            required
           />
         </label>
         <br />
-        <label className="m-72">
+        <label className="md:m-72 md:ml-0 ml-8">
           Message
-          <input className="mb-8 ml-4 text-black" type="text" name="message" />
+          <input className="md:mb-8 mb-6 md:ml-4 ml-4 text-black" type="text" name="message" required />
         </label>
         <br />
-        <input className="ml-[410px]" type="submit" value="Send" />
+        <input className="md:ml-[150px] ml-48" type="submit" value="Send" />
       </form>
+      <ToastContainer
+      position="top-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+      transition={Bounce}/>
     </div>
   );
 };
 
 export default Contact;
+
+
