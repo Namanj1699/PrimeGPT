@@ -27,7 +27,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="text-white md:ml-[600px] md:mt-[-175px] h-screen object-cover">
+    <div className="text-white md:ml-[600px] md:mt-[-175px] h-screen object-cover fixed">
       <form ref={form} onSubmit={sendEmail}>
         <label className="md:m-72 md:ml-0 ml-8">
           Name
