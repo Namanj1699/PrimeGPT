@@ -27,7 +27,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="text-white md:ml-[600px] md:mt-[-175px] h-screen object-cover fixed">
+    <div className="text-white md:ml-[600px] md:mt-[-155px] h-screen object-cover fixed">
       <form ref={form} onSubmit={sendEmail}>
         <label className="md:m-72 md:ml-0 ml-8">
           Name
@@ -57,7 +57,7 @@ const Contact = () => {
         <input className="md:ml-[150px] ml-48" type="submit" value="Send" />
       </form>
       <ToastContainer
-      position="top-center"
+      position="bottom-center"
       autoClose={5000}
       hideProgressBar={false}
       newestOnTop={false}
